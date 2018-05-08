@@ -25,14 +25,14 @@ test('should display the brand name in the first `<li>` element', () => {
     expect(firstproduct.contains(mockupProducts[0].brand)).toEqual(true);
 });
 
-/*test('should display the brand name in all `<li>` elements', () => {
+test('should display the brand name in all `<li>` elements', () => {
     const mockupProducts = [
         {id: 1 , name: 'Mock Product 1', brand: 'MockBrand A'},
         {id: 2 , name: 'Mock Product 2', brand: 'MockBrand B'},
         {id: 3 , name: 'Mock Product 3', brand: 'MockBrand C'}   
     ];
     const wrapper = shallow(<ProductList products={mockupProducts}/>);
-    wrapper.find('li').forEach((item) => {
-        expect(item.text()).contains(mockupProducts[mockupProducts.indexOf(item)].brand);
+    wrapper.find('li').map((item, i) => {
+        expect(item.contains(mockupProducts[i].brand));
     })
-});*/
+});
